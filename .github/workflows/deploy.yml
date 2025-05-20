@@ -24,13 +24,10 @@ jobs:
         node-version: '20'
 
     - name: Install dependencies
-      run: npm install
+      run: bahmutov/npm-install@v1
 
     - name: Build the project
-      run: |
-          npm run build
-          pwd
-          ls -R
+      run: npm run build
 
     - name: Upload Production Artifacts
       uses: actions/upload-artifact@v4
@@ -54,5 +51,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+        publish_dir: ./alfredo-del-rayo-project/dist
   
